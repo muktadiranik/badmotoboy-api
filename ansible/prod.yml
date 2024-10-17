@@ -1,0 +1,16 @@
+---
+- hosts: prod
+  become: true
+  vars_files:
+    # - vars/secret.yml
+    - vars/main.yml
+
+  vars:
+    frontend_server_name: badmotoboy.com
+    backend_server_name: app.badmotoboy.com
+
+  roles:
+    # - base
+    # - geerlingguy.docker
+    - { role: ansistrano.deploy, become: false }
+    # - api

@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% load static %} {% block title %}Terms and
+Conditions{% endblock %} {% block content %} 
+{% include 'django_quill/media.html' %}
+<div class="container">
+  <div class="my-5">
+    <h1>Terms and Conditions</h1>
+  </div>
+  <hr />
+  <div>
+    {% for terms_and_condition in terms_and_conditions %}
+    <p style="font-size: 8px">{{ terms_and_condition.content.html|safe }}</p>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}

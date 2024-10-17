@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Privacy Policy{% endblock %}
+{% block content %}
+{% include 'django_quill/media.html' %}
+<div class="container">
+  <div class="my-5">
+    <h1>Privacy Policies</h1>
+  </div>
+  <hr />
+  <div>
+    {% for privacy_policy in privacy_policies %}
+    <p>{{ privacy_policy.content.html|safe }}</p>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock content %}
+
+

@@ -1,0 +1,8 @@
+[program:{{ project_name }}]
+directory={{ project_path }}
+command=docker compose -f production.yml up
+user=ubuntu
+redirect_stderr=true
+autostart=true
+autorestart=true
+priority=10

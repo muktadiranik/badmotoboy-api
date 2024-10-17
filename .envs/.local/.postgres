@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST = "postgres"
+POSTGRES_PORT = "5432"
+POSTGRES_DB = "badmotoboy"
+POSTGRES_USER = "AdtZbeUwWBhpEGtMnJTbDwdZNRwHsSrj"
+POSTGRES_PASSWORD = "RnpEPHdJBnfzHt9ZBTDsDRblPqiznSOeuzujJz6Z8TMihe9LPBA0LbHemIsRataI"

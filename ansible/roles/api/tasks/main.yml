@@ -1,0 +1,8 @@
+- name: Create the Supervisor config file
+  template: src=supervisor.j2
+    dest=/etc/supervisor/conf.d/{{ application_name }}.conf
+
+- name: Re-read the Supervisor config file
+  supervisorctl: name={{ project_name }} state=present
+  notify:
+    - restart {{ project_name }}

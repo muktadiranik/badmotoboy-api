@@ -1,0 +1,41 @@
+---
+- include_tasks: create_swap_file.yml
+  when: create_swap_file
+  tags: swap
+
+- name: Install aptitude
+  apt:
+    name: aptitude
+    state: latest
+    update_cache: true
+
+- name: Install required system packages
+  apt:
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - python3-pip
+      - virtualenv
+      - python3-setuptools
+      - supervisor
+    state: latest
+    update_cache: true
+  tags:
+    - packages
+    - packages.security
+
+- name: Create the application group
+  group: name=www-data system=yes state=present
+
+- name: Add the application user to the application group
+  user: name={{ ansible_user }} group=www-data state=present
+
+- name: Create project directory if it does not exist
+  ansible.builtin.file:
+    path: "{{ ansistrano_deploy_to }}"
+    state: directory
+    mode: "0755"
+    owner: "{{ ansible_user }}"
+    group: "www-data"

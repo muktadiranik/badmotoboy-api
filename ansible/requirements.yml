@@ -1,0 +1,4 @@
+---
+- src: ansistrano.deploy
+- src: ansistrano.rollback
+- src: geerlingguy.docker

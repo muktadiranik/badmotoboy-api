@@ -1,0 +1,17 @@
+ansible_ssh_private_key_file: "~/.ssh/badmotoboy.pem"
+
+application_name: badmotoboy
+project_name: badmotoboy
+
+ansistrano_deploy_from: "{{ playbook_dir }}/../"
+ansistrano_deploy_to: "/var/www/badmotoboy"
+ansistrano_version_dir: "releases"
+ansistrano_current_dir: "current"
+ansistrano_current_via: "symlink"
+ansistrano_keep_releases: 1
+ansistrano_deploy_via: rsync
+
+project_path: "{{ ansistrano_release_path.stdout }}"
+
+docker_users:
+  - ubuntu

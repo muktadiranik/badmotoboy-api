@@ -1,0 +1,4 @@
+---
+- name: restart {{ project_name }}
+  supervisorctl: name={{ project_name }} state=restarted
+
