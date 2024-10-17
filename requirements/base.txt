@@ -24,7 +24,7 @@ djangorestframework==3.14.0  # https://github.com/encode/django-rest-framework
 django-cors-headers==3.14.0  # https://github.com/adamchainz/django-cors-headers
 # DRF-spectacular for api documentation
 drf-spectacular==0.26.1  # https://github.com/tfranzel/drf-spectacular
-graphene-django==3.0.0
+graphene-django==3.2.2
 django-filter==22.1
 fcm-django==1.0.12
 django-graphql-jwt==0.3.4
